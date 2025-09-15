@@ -29,7 +29,6 @@ pipeline {
                         pkill -f "node ./bin/www" || true
                         sleep 2
                         nohup npm start > app.log 2>&1 &
-                        disown
                     ''' 
                 } 
             } 
