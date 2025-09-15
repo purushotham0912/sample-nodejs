@@ -26,9 +26,9 @@ pipeline {
             steps { 
                 dir("${APP_DIR}") { 
                     sh ''' 
-                        pkill -f "node ./bin/www" || true
-                        sleep 2
-                        nohup setsid npm start > app.log 2>&1 &
+                        pm2 delete sample-nodejs || true
+                        pm2 start ./bin/www --name sample-nodejs
+                        pm2 save
                     ''' 
                 } 
             } 
