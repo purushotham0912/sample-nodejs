@@ -26,8 +26,10 @@ pipeline {
             steps { 
                 dir("${APP_DIR}") { 
                     sh ''' 
-                        pkill -f "node ./bin/www" || true 
-                        nohup npm start > app.log 2>&1 & 
+                        pkill -f "node ./bin/www" || true
+                        sleep 2
+                        nohup npm start > app.log 2>&1 &
+                        disown
                     ''' 
                 } 
             } 
