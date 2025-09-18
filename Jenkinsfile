@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') { 
             steps { 
                 dir("${APP_DIR}") { 
-                    git branch: 'main', url: 'https://github.com/digitalocean/sample-nodejs.git'
+                    git branch: 'main', url: 'https://github.com/purushotham0912/sample-nodejs.git'
                 } 
             } 
         } 
